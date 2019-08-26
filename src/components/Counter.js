@@ -11,7 +11,7 @@ const Counter = () => {
   }
 
   return (
-    <Card style={{ width: '18rem' }}>
+    <Card style={{ width: '18rem',  margin: '2rem', }}>
       <Card.Body>
         <Card.Title>{name}</Card.Title>
         <Card.Text>
