@@ -18,10 +18,17 @@ const defaultCounters = [
 const Counters = () => {
   const [counters, setCounters] = useState(defaultCounters);
 
-  const setCount = (counter) => {
+  const add = (counter) => {
     const tempCounters = [...counters];
     const counterIndex = tempCounters.indexOf(counter);
     tempCounters[counterIndex].count++;
+    setCounters(tempCounters);
+  }
+
+  const subtract = (counter) => {
+    const tempCounters = [...counters];
+    const counterIndex = tempCounters.indexOf(counter);
+    tempCounters[counterIndex].count--;
     setCounters(tempCounters);
   }
 
@@ -33,7 +40,8 @@ const Counters = () => {
         <Counter
           key={ counter.name }
           counter={ counter }
-          add={ setCount }
+          add={ add }
+          subtract={ subtract }
           />
         </Col>
       ))}
